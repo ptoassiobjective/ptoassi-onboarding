@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Exercises\OneController;
+use App\Http\Controllers\Exercises\TwoController;
+use App\Http\Controllers\Exercises\ThreeController;
+use App\Http\Controllers\Exercises\FourController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::prefix('/exercises')->group(function () {
+    Route::get('one', [OneController::class, 'exerciseOne']);
+    Route::get('two', [TwoController::class, 'exerciseTwo']);
+    Route::get('three', [ThreeController::class, 'exerciseThree']);
+    Route::get('four', [FourController::class, 'exerciseFour']);
 });
