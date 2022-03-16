@@ -7,11 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class ExerciseThreeServicesTest extends TestCase {
 
-    /**
-     * test returns is multiple of 3 or 5
-     *
-     * @return void
-     */
     public function testIf15IsMultiple(): void {
         $int = 15;
         $expect = 'É multiplo de 3 ou 5';
@@ -23,11 +18,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns is multiple of 3 or 5
-     *
-     * @return void
-     */
     public function testIf9IsMultiple(): void {
         $int = 9;
         $expect = 'É multiplo de 3 ou 5';
@@ -39,11 +29,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns is multiple of 3 or 5
-     *
-     * @return void
-     */
     public function testIf20IsMultiple(): void {
         $int = 20;
         $expect = 'É multiplo de 3 ou 5';
@@ -55,11 +40,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns is multiple of 3 or 5
-     *
-     * @return void
-     */
     public function testIf14IsNotMultiple(): void {
         $int = 14;
         $expect = 'Não é multiplo de 3 ou 5';
@@ -71,11 +51,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns is happy
-     *
-     * @return void
-     */
     public function testIfIsHappy(): void {
         $int = 7;
         $expect = 'O numero 7 é um numero feliz!';
@@ -87,11 +62,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns is not happy
-     *
-     * @return void
-     */
     public function testIfIsNotHappy(): void {
         $int = 3;
         $expect = 'O numero 3 não é um numero feliz!';
@@ -103,11 +73,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns is prime
-     *
-     * @return void
-     */
     public function testIfIsPrime(): void {
         $int = 7;
         $expect = 'É número primo';
@@ -119,11 +84,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns is not prime
-     *
-     * @return void
-     */
     public function testIfIsNotPrime(): void {
         $int = 4;
         $expect = 'Não é número primo';
@@ -135,11 +95,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns a number from a letter
-     *
-     * @return void
-     */
     public function testLetterValue(): void {
         $letters = array_merge(range('a', 'z'), range('A', 'Z'));
         $expect = range(1, 52);
@@ -156,11 +111,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $returns);
     }
 
-    /**
-     * test returns a number from not a letter
-     *
-     * @return void
-     */
     public function testNotLetterValue(): void {
         $letters = ['/', 0, 'Ç', 'á', ' '];
         $expect = [0, 0, 0, 0, 0];
@@ -177,11 +127,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $returns);
     }
 
-    /**
-     * test returns a sum from words
-     *
-     * @return void
-     */
     public function testSumWords(): void {
         $phraseArray = ['Hello', 'world', '!', 'a'];
         $expect = ['Hello' => 78, 'world' => 72, '!' => 0, 'a' => 1];
@@ -193,11 +138,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns a array of clean words
-     *
-     * @return void
-     */
     public function testCleanArrayWords(): void {
         $phrase = 'Hello world!';
         $expect = ['Hello', 'world'];
@@ -209,11 +149,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns a array with params
-     *
-     * @return void
-     */
     public function testExerciseThreeSuccess(): void {
         $phrase = 'Hello world!';
         $expect = [
@@ -238,11 +173,6 @@ class ExerciseThreeServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test returns a array with params
-     *
-     * @return void
-     */
     public function testExerciseThreeHappyPrimeSuccess(): void {
         $phrase = 'g';
         $expect = [
