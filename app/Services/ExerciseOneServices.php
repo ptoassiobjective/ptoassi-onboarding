@@ -9,32 +9,32 @@ class ExerciseOneServices {
         $start = 1;
         $end = 1000;
 
-        $multiple3 = $this->repetition($start, $end, 3);
-        $multiple5 = $this->repetition($start, $end, 5);
-        $multiple7 = $this->repetition($start, $end, 7);
+        $multiples = $this->repetition($start, $end, [3, 5, 7]);
 
-        $threeOrFive = array_unique(array_merge($multiple3, $multiple5));
+        $threeOrFive = array_unique(array_merge($multiples[3], $multiples[5]));
         $results['threeOrFive'] = array_sum($threeOrFive);
 
-        $threeAndFive = array_intersect($multiple3, $multiple5);
+        $threeAndFive = array_intersect($multiples[3], $multiples[5]);
         $results['threeAndFive'] = array_sum($threeAndFive);
 
-        $threeOrFiveAndSeven = array_intersect($threeOrFive, $multiple7);
+        $threeOrFiveAndSeven = array_intersect($threeOrFive, $multiples[7]);
         $results['threeOrFiveAndSeven'] = array_sum($threeOrFiveAndSeven);
 
         return $results;
     }
 
-    public function repetition(int $start, int $end, int $multiple): array {
+    public function repetition(int $start, int $end, array $multiples): array {
 
-        $multiples = [];
+        $multipleResults = [];
         for ($x = $start; $x < $end; $x++) {
-            if ($this->multiple($x, $multiple)) {
-                $multiples[] = $x;
+            foreach ($multiples as $multiple) {
+                if ($this->multiple($x, $multiple)) {
+                    $multipleResults[$multiple][] = $x;
+                }
             }
         }
 
-        return $multiples;
+        return $multipleResults;
     }
 
     public function multiple(int $value, int $multiple): bool {

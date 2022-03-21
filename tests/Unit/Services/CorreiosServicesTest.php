@@ -14,11 +14,6 @@ class CorreiosServicesTest extends TestCase {
 
     use DatabaseTransactions;
 
-    /**
-     * test mock Cart and Correios
-     *
-     * @return void
-     */
     public function testSumTotalProducts(): void {
 
         $user = User::factory()->create();
@@ -46,11 +41,6 @@ class CorreiosServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test mock Cart and Correios grater 100
-     *
-     * @return void
-     */
     public function testIfGreater100(): void {
         $user = User::factory()->create();
         $product = Product::factory()->create([
@@ -75,11 +65,6 @@ class CorreiosServicesTest extends TestCase {
         $this->assertEquals($expect, $return);
     }
 
-    /**
-     * test mock Cart and Correios Lower 100
-     *
-     * @return void
-     */
     public function testIfLower100(): void {
         $user = User::factory()->create();
         $product = Product::factory()->create([

@@ -15,11 +15,6 @@ class CartServicesTest extends TestCase {
 
     use DatabaseTransactions;
 
-    /**
-     * test return sum of all products
-     *
-     * @return void
-     */
     public function testSumTotalProducts(): void {
 
         $user = User::factory()->create();
@@ -46,11 +41,6 @@ class CartServicesTest extends TestCase {
         $this->assertEquals($expect, $total);
     }
 
-    /**
-     * test empty cart
-     *
-     * @return void
-     */
     public function testSumOfEmpty(): void {
 
         $user = User::factory()->create();
@@ -66,11 +56,6 @@ class CartServicesTest extends TestCase {
         $this->assertEquals($expect, $total);
     }
 
-    /**
-     * test sum cart
-     *
-     * @return void
-     */
     public function testSumAferAdd(): void {
 
         $cartService = new CartServices(new CorreiosServices());
@@ -107,11 +92,6 @@ class CartServicesTest extends TestCase {
         $this->assertEquals($expect, $total);
     }
 
-    /**
-     * test add cart
-     *
-     * @return void
-     */
     public function testSumAddSameProducts(): void {
 
         $cartService = new CartServices(new CorreiosServices());
@@ -144,11 +124,6 @@ class CartServicesTest extends TestCase {
         $this->assertEquals($expect, $total);
     }
 
-    /**
-     * test remove product cart
-     *
-     * @return void
-     */
     public function testSumRemoveProducts(): void {
 
         $cartService = new CartServices(new CorreiosServices());
@@ -175,11 +150,6 @@ class CartServicesTest extends TestCase {
         $this->assertEquals($expect, $total);
     }
 
-    /**
-     * test remove product cart
-     *
-     * @return void
-     */
     public function testSumRemove2Products(): void {
 
         $cartService = new CartServices(new CorreiosServices());
@@ -206,11 +176,6 @@ class CartServicesTest extends TestCase {
         $this->assertEquals($expect, $total);
     }
 
-    /**
-     * test remove product cart
-     *
-     * @return void
-     */
     public function testSumRemove6Products(): void {
 
         $cartService = new CartServices(new CorreiosServices());
@@ -237,7 +202,6 @@ class CartServicesTest extends TestCase {
         $this->assertEquals($expect, $total);
     }
 
-    /** test add cart */
     public function testAddCart(): void {
         $cartService = new CartServices(new CorreiosServices());
 
@@ -252,7 +216,6 @@ class CartServicesTest extends TestCase {
         $this->assertCount(1, $totalProducts);
     }
 
-    /** test add cart */
     public function testAddEmptyCart(): void {
         $cartService = new CartServices(new CorreiosServices());
 
@@ -267,7 +230,6 @@ class CartServicesTest extends TestCase {
         $this->assertCount(0, $totalProducts);
     }
 
-    /** test remove cart */
     public function testRemoveCart(): void {
         $cartService = new CartServices(new CorreiosServices());
 
@@ -283,7 +245,6 @@ class CartServicesTest extends TestCase {
         $this->assertCount(0, $totalProducts);
     }
 
-    /** test remove cart */
     public function testRemoveEmptyCart(): void {
         $cartService = new CartServices(new CorreiosServices());
 
